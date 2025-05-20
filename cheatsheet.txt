@@ -1,0 +1,52 @@
+# AWS Costs Cheatsheet
+
+USD per year. 
+Per year is **so much easier to understand** than per hour.
+
+# Compute and DB per year 
+On demand prices for typical region (eg. us-west-2), discounts of about 50% are obtainable with Reserved Instances, (Compute) Savings Plans and Spot Instances.  
+
+| EC2 |  m7g.medium (2 CPU, 4GB) | $360 |  |
+| Lambda | per CPU GB year.  ARM | $420 | + $6 per request per second |
+| Fargate | ARM 2 CPUs 4GB  | $690 |  |
+| ECS |  |  | as EC2 or Fargate |
+| EKS <!--- rowspan="3" ---> | control plane | $900 | first 14 months after version release |
+|  | control plane | $5300 |after 14 months EC2 surcharge |
+|  | auto mode | | + 20% EC2 surcharge |
+| ELB | ALB, NLB, Classic | $200 |+ $70 x load units eg. data transfer 1 GB per hour. |
+| RDS | db.t4g.medium (1 CPU 4GB) | $570 | Single AZ. MySQL, PostgreSQL, MariaDB |
+| OpenSearch | m7g.medium.search (1 CPU 4GB) | $600 |  |
+
+### relative sizes:
+| nano | micro | small | medium | large | xlarge | 2xlarge |
+| 1/8 | 1/4 | 1/2 | 1 | 2 | 4 | 8 |
+
+# Storage per TB year
+| EBS | gp3 | $1000 | HDD 1/2 price |
+| snapshot <!--- rowspan="2" --->| standard  | $600| retrieval free  |
+|  | archive  |  $150 | retrieval $370 |
+| S3 <!--- rowspan="2" --->| standard  | $280  | infrequent 1/2 price.  Std Glacier 1/6th price |
+|  |  glacier deep archive | $12 | 12 hour retrieval |
+| EFS <!--- rowspan="2" ---> | standard  | $3700  | $370 per TB read, $740 write.  $70 transfer read or write |
+|  |  infrequent |  $200 | $70 read or write |
+
+# Network per TB or year
+| EC2 <!--- rowspan="2" --->| to internet | $90 | first 100GB free |
+|  | to another AWS region | $20 | first 100GB free |
+| CloudFront | US/Europe | $90 | first 1TB free |
+| NAT gateway <!--- rowspan="2" --->| per year | $40 |  |
+|  | per TB | $45 |  |
+| public IP |  | $45 | idle or in use |
+| elastic IP |  | $45 | idle or additional  |
+| WAF  | Web ACL per rule per year | $72 | + $18 per request per second |
+
+
+### Free networking:  
+* Within the same AZ.    
+* to EC2 from internet.    
+* EC2 to CloudFront, S3.    
+* Public IPv4 addresses that are not dedicated to your resource for example, public IPv4 addresses associated with Amazon S3 that are not dedicated per S3 bucket.  
+* AWS Elastic IP addresses associated with a running instance  
+* to CloudWatch.  
+* Internet Gateway to public endpoint in the same Region. (not NAT).    
+* between DynamoDB and other AWS services within the same AWS Region
