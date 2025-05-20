@@ -1,8 +1,10 @@
 # AWSCosts
 
-create md with html table extensions from .txt which is modified md
+Markdown lacks rowspan and github lacks styles too.  Converting to html allows rowspan for github and more generally allows styles.
+
+Create html table from .txt which is modified md.  A comment containing the rowspan directive in the first column can be used.  There's quite a bit of hard coding to get this written quickly and "table.py" which uses styles not supported by github gists.
 ```
-  ./table.py cheatsheet.txt > cheatsheet.md
+  ./gist-table.py cheatsheet.txt > cheatsheet.md
 ```
 
 create secret gist from the md
