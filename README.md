@@ -7,7 +7,7 @@ Create html table from .txt which is modified md.  A comment containing the rows
   ./gist-table.py cheatsheet.txt > cheatsheet.md
 ```
 
-create secret gist from the md
+create secret gist from the md and view in browser
 ```
   gh gist create cheatsheet.md -w  
 ```
