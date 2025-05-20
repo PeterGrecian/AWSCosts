@@ -1,4 +1,14 @@
 # AWSCosts
+There are tools such as Cost Explorer which can be used to study AWS costs incurred, however it is also very useful to have an easy to use value for the cost of a resource to use for developing designs.  
+
+The costs do vary with region, but in most cases the costs are within a 10% margin. Bulk discounts are usually quite small, and there is the effect of the "always free" quotas which deserve a separate discussion.  Substantial discounts can be obtained for compute, particularly using Reserved Instances in the case of EC2 and RDS, or Compute Savings Plans to a lesser degree for Fargate or Lambda. The completeness or "coverage" of the Reservations is an important factor in how accurately resources can be costed and 2 significant figures is ample.
+
+
+
+## AWS Costs Cheatsheet
+
+
+### Tables in the Cheatsheet for gist markdown and more generally
 
 Markdown lacks rowspan and github lacks styles too.  Converting to html allows rowspan for github and more generally allows styles.
 
