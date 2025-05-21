@@ -1,7 +1,7 @@
 # AWS Costs Cheatsheet
 
 USD per year. 
-Per year is **so much easier to understand** than per hour.
+Yearly cost is so much easier to understand than hourly.
 
 # Compute and DB per year 
 On demand prices for typical region (eg. us-west-2), discounts of about 50% are obtainable with Reserved Instances, (Compute) Savings Plans and Spot Instances.  
