@@ -11,7 +11,7 @@ On demand prices for typical region (eg. us-west-2), discounts of about 50% are 
 | Fargate | ARM 2 CPUs 4GB  | $690 |  |
 | ECS |  |  | as EC2 or Fargate |
 | EKS <!--- rowspan="3" ---> | control plane | $900 | first 14 months after version release |
-|  | control plane | $5300 |after 14 months EC2 surcharge |
+|  | control plane | $5300 |after 14 months after version release|
 |  | auto mode | | + 20% EC2 surcharge |
 | ELB | ALB, NLB, Classic | $200 |+ $70 x load units eg. data transfer 1 GB per hour. |
 | RDS | db.t4g.medium (1 CPU 4GB) | $570 | Single AZ. MySQL, PostgreSQL, MariaDB |
